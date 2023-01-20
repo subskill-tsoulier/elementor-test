@@ -14,7 +14,7 @@
  * php version 7.3.9
  */
 
-namespace ElementorAssystem;
+namespace ElementorRgpd;
 
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
