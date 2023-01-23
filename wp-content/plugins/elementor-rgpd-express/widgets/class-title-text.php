@@ -1,6 +1,6 @@
 <?php
 /**
- * Assystem class.
+ * rgpd class.
  *
  * @category   Class
  * @package    ElementorRgpd
@@ -20,7 +20,7 @@ use Elementor\Utils;
 // Security Note: Blocks direct access to the plugin PHP files.
 defined( 'ABSPATH' ) || die();
 /**
- * Assystem widget class.
+ * rgpd widget class.
  *
  * @since 1.0.0
  */
@@ -28,7 +28,7 @@ class TitleText extends Widget_Base {
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
-		//wp_register_style( 'assystem', plugins_url( '/assets/css/assystem.css', ELEMENTOR_ASSYSTEM ), array(), '1.0.0' );
+		//wp_register_style( 'rgpd', plugins_url( '/assets/css/rgpd.css', ELEMENTOR_RGPD ), array(), '1.0.0' );
 	}
 
 	public function get_name() {
@@ -36,7 +36,7 @@ class TitleText extends Widget_Base {
 	}
 
 	public function get_title() {
-		return __( 'Bloc Titre / Texte', 'assystem' );
+		return __( 'Bloc Titre / Texte', 'rgpd' );
 	}
 
 	public function get_icon() {
@@ -44,11 +44,11 @@ class TitleText extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( 'assystem' );
+		return array( 'rgpd' );
 	}
 
 	public function get_style_depends() {
-		return array( 'assystem' );
+		return array( 'rgpd' );
 	}
 	/**
 	 * Register the widget controls.
@@ -63,7 +63,7 @@ class TitleText extends Widget_Base {
 		$this->start_controls_section(
 			'general',
 			array(
-				'label' => __( 'Configuration du bloc', 'assystem' ),
+				'label' => __( 'Configuration du bloc', 'rgpd' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -71,16 +71,16 @@ class TitleText extends Widget_Base {
 			'background-color',
 			[
 				'type' => \Elementor\Controls_Manager::SELECT,
-				'label' => esc_html__( 'Choix du fond de couleur du bloc', 'assystem' ),
+				'label' => esc_html__( 'Choix du fond de couleur du bloc', 'rgpd' ),
 				'required' => true,
 				'toggle' => false,
 				'options' => [
-					'bg-pink'   =>  esc_html__( 'Rouge principal', 'assystem' ),
-					'bg-white'  => esc_html__( 'Blanc', 'assystem' ),
-					'bg-light'  => esc_html__( 'Gris clair', 'assystem' ),
-					'bg-grey'   => esc_html__( 'Gris foncé', 'assystem' ),
-					'bg-violet' => esc_html__( 'Violet', 'assystem' ),
-					'bg-blue'   => esc_html__( 'Bleu', 'assystem' )
+					'bg-pink'   =>  esc_html__( 'Rouge principal', 'rgpd' ),
+					'bg-white'  => esc_html__( 'Blanc', 'rgpd' ),
+					'bg-light'  => esc_html__( 'Gris clair', 'rgpd' ),
+					'bg-grey'   => esc_html__( 'Gris foncé', 'rgpd' ),
+					'bg-violet' => esc_html__( 'Violet', 'rgpd' ),
+					'bg-blue'   => esc_html__( 'Bleu', 'rgpd' )
 				],
 				'default' => 'bg-white'
 			]
@@ -88,19 +88,19 @@ class TitleText extends Widget_Base {
 		$this->add_control(
 			'in_card',
 			[
-				'label'         => esc_html__( 'Mettre le bloc dans un cadre blanc', 'assystem' ),
+				'label'         => esc_html__( 'Mettre le bloc dans un cadre blanc', 'rgpd' ),
 				'type'          => Controls_Manager::SWITCHER,
 				'default'       => 'yes',
-				'description'   => esc_html__( 'Si vous souhaitez', 'assystem' ),
+				'description'   => esc_html__( 'Si vous souhaitez', 'rgpd' ),
 				'frontend_available' => true,
 			]
 		);
 		$this->add_control(
 			'title',
 			array(
-				'label'   => __( 'Titre du bloc', 'assystem' ),
+				'label'   => __( 'Titre du bloc', 'rgpd' ),
 				'type'    => Controls_Manager::TEXT,
-				'placeholder' => esc_html__("Title", "assystem"),
+				'placeholder' => esc_html__("Title", "rgpd"),
 				'default' => "",
 			)
 		);
@@ -108,24 +108,24 @@ class TitleText extends Widget_Base {
 			'hn',
 			[
 				'type' => \Elementor\Controls_Manager::CHOOSE,
-				'label' => esc_html__( 'Type de balise pour le titre', 'assystem' ),
+				'label' => esc_html__( 'Type de balise pour le titre', 'rgpd' ),
 				'required' => true,
 				'toggle' => false,
 				'options' => [
 					'h1' => [
-						'title' => esc_html__( 'H1', 'assystem' ),
+						'title' => esc_html__( 'H1', 'rgpd' ),
 						'icon' => 'eicon-editor-h1',
 					],
 					'h2' => [
-						'title' => esc_html__( 'H2', 'assystem' ),
+						'title' => esc_html__( 'H2', 'rgpd' ),
 						'icon' => 'eicon-editor-h2',
 					],
 					'h3' => [
-						'title' => esc_html__( 'H3', 'assystem' ),
+						'title' => esc_html__( 'H3', 'rgpd' ),
 						'icon' => 'eicon-editor-h3',
 					],
 					'p' => [
-						'title' => esc_html__( 'P', 'assystem' ),
+						'title' => esc_html__( 'P', 'rgpd' ),
 						'icon' => 'eicon-editor-paragraph',
 					],
 				],
@@ -145,7 +145,7 @@ class TitleText extends Widget_Base {
 		$this->add_control(
 			'text',
 			array(
-				'label'   => __( 'Texte', 'assystem' ),
+				'label'   => __( 'Texte', 'rgpd' ),
 				'type'    => Controls_Manager::WYSIWYG,
 				'default' => '',
 			)

@@ -69,6 +69,8 @@ class Widgets {
      */
     private function include_widgets_files() {
         require_once 'widgets/class-title-text.php';
+        require_once 'widgets/class-text-classic.php';
+		require_once 'widgets/class-spotify.php';
     }
 
     /**
@@ -85,6 +87,8 @@ class Widgets {
 
         // Register the plugin widget classes.
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TitleText() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TextClassic() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Spotify() );
 		// Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TitleText() );
     }
 
