@@ -12,7 +12,7 @@
  * Author URI:  https://www.subskill.com
  * Text Domain: elementor-rgpd
  */
-define( 'ELEMENTOR_RGPD', __FILE__ );
+define( "ELEMENTOR_RGPD", __FILE__ );
 /**
  * Include the Elementor_Rgpd class.
  */

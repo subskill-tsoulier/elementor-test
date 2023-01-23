@@ -17,6 +17,8 @@
 namespace ElementorRgpd;
 
 // Security Note: Blocks direct access to the plugin PHP files.
+use Elementor\Plugin;
+
 defined( 'ABSPATH' ) || die();
 
 /**
@@ -66,7 +68,7 @@ class Widgets {
      * @access private
      */
     private function include_widgets_files() {
-        require_once 'widgets/class-action.php';
+        require_once 'widgets/class-title-text.php';
     }
 
     /**
@@ -82,7 +84,8 @@ class Widgets {
         $this->include_widgets_files();
 
         // Register the plugin widget classes.
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\Action() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TitleText() );
+		// Plugin::instance()->widgets_manager->register_widget_type( new Widgets\TitleText() );
     }
 
     /**
